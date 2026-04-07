@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pro Trading Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <span class="logo-icon">🚀</span>
+        <span class="logo-text">ProTrader</span>
+      </div>
+    </div>
+
+    <div class="header">
+      <h1>Pro Trading Calculator</h1>
+      <p>Calculate your futures profit with precision</p>
+    </div>
+
+    <div class="top-strip">
+      <div class="top-strip-left">
+        <div class="top-strip-title">Start Your Calculation</div>
+        <div class="top-strip-subtitle">Select a futures market and order parameters</div>
+      </div>
+      <div class="top-strip-right">
+        <label for="market" class="top-strip-label">Select a Market</label>
+        <select id="market" onchange="changeMarket()">
+          <option value="es-mini">S&P 500 E-Mini (ES)</option>
+          <option value="mes-micro">S&P 500 Micro E-Mini (MES)</option>
+          <option value="qspx">S&P 500 Spot Quoted (QSPX)</option>
+          <option value="nq-mini">NASDAQ 100 E-Mini (NQ)</option>
+          <option value="mnq-micro">NASDAQ 100 Micro E-Mini (MNQ)</option>
+          <option value="qndx">NASDAQ 100 Spot Quoted (QNDX)</option>
+          <option value="forex">Forex/Crypto</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="calc-grid">
+      <!-- Left panel: inputs -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-icon">📄</div>
+          <div>
+            <div class="panel-title">Hypothetical Order Information</div>
+            <div class="panel-subtitle">Price details and order size</div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <label>Direction</label>
+          <select id="direction">
+            <option value="long">📈 Bullish (Long)</option>
+            <option value="short">📉 Bearish (Short)</option>
+          </select>
+
+          <label>Entry Price</label>
+          <input type="number" id="entry" placeholder="16500.00" step="0.01">
+
+          <label>Take Profit</label>
+          <input type="number" id="takeProfit" placeholder="16600.00" step="0.01">
+
+          <label>Stop Loss</label>
+          <input type="number" id="stopLoss" placeholder="16450.00" step="0.01">
+
+          <label>Number of Contracts</label>
+          <input type="number" id="size" placeholder="1" min="1">
+
+          <button class="calculate-btn" onclick="calculate()">CALCULATE</button>
+        </div>
+      </div>
+
+      <!-- Right panel: results -->
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-icon">💰</div>
+          <div>
+            <div class="panel-title">Profit or Loss Results</div>
+            <div class="panel-subtitle">Summary of your hypothetical trade</div>
+          </div>
+        </div>
+
+        <div id="result">
+          <h3>Trading Results</h3>
+          <p>Enter your trade details on the left and click calculate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
