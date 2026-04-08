@@ -24,6 +24,23 @@ html,body{height:100%}
 body{
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background:
+    /* trading chart vertical lines */
+    repeating-linear-gradient(
+      to right,
+      rgba(56,189,248,0.05) 0px,
+      rgba(56,189,248,0.05) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    /* trading chart horizontal lines */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(56,189,248,0.03) 0px,
+      rgba(56,189,248,0.03) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    /* existing glow/gradient background */
     radial-gradient(circle at 10% 10%, rgba(79,108,255,0.06), transparent 8%),
     radial-gradient(circle at 90% 90%, rgba(14,165,233,0.04), transparent 12%),
     linear-gradient(180deg, var(--bg-deep) 0%, #020417 60%, #000812 100%);
