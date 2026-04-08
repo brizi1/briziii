@@ -99,7 +99,7 @@ body::before{
 /* Page container */
 .container{
   width:100%;
-  max-width:980px;
+  max-width:1200px;  /* wider on desktop */
   margin:0 auto;
 }
 
@@ -216,6 +216,48 @@ select option{
 .summary-profit .summary-value{ color:var(--green) }
 .summary-loss .summary-value{ color:var(--red) }
 .summary-rr .summary-value{ color:var(--cyan) }
+
+/* Desktop enhancements */
+@media (min-width:1200px){
+  body{
+    padding:56px 48px;
+  }
+
+  .container{
+    max-width:1300px;
+  }
+
+  .calc-grid{
+    grid-template-columns:1.3fr 1.1fr;
+    gap:28px;
+  }
+
+  .panel{
+    padding:22px;
+  }
+
+  .header h1{
+    font-size:32px;
+  }
+
+  .header p{
+    font-size:14px;
+  }
+
+  .top-strip{
+    padding:14px 18px;
+  }
+
+  input, select, textarea {
+    font-size:15px;
+    padding:11px 16px;
+  }
+
+  .calculate-btn{
+    padding:14px 18px;
+    font-size:13px;
+  }
+}
 
 /* responsive */
 @media (max-width:900px){
